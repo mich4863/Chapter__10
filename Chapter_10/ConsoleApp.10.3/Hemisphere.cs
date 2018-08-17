@@ -8,14 +8,9 @@ namespace ConsoleApp._10._3
 {
     class Hemisphere
     {
-        private decimal radius;
+        private double radius = 1;
 
-        public Hemisphere(decimal radius)
-        {
-            Radius = radius;
-        }
-
-        public decimal Radius
+        public double Radius
         {
             get
             {
@@ -24,26 +19,38 @@ namespace ConsoleApp._10._3
 
             set
             {
-                if(value > 0.0m && value < 12.0m)
+                if(value > 0.0 && value < 12.0)
                 {
                     radius = value;
                 }
             }
         }
 
-        public decimal Volume
+        public double Volume
         {
-            get;
+            get
+            {
+                double result = 1.33333333333 * Math.PI * Math.Pow(Radius, 3);
+                return result;
+            }
         }
 
-        public decimal CurvedSurfaceArea
+        public double CurvedSurfaceArea
         {
-            get;
+            get
+            {
+                double result = 2 * Math.PI * Math.Pow(Radius, 2);
+                return result;
+            }
         }
 
-        public decimal TotalSurfaceArea
+        public double TotalSurfaceArea
         {
-            get;
+            get
+            {
+                double result = 4 * Math.PI * Math.Pow(Radius, 2);
+                return result;
+            }
         }
     }
 }
