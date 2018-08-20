@@ -26,11 +26,11 @@ namespace ConsoleApp._10._4
             Minute = minute;
             Second = second;
             
-            /*hour = hour * 3600;
+            hour = hour * 3600;
             minute = minute * 60;
             int result = hour + minute + second;
 
-            Second = result;*/
+            Second = result;
         }
 
         public int Hour
