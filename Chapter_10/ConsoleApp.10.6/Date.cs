@@ -8,6 +8,7 @@ namespace ConsoleApp._10._6
 {
     public class Date
     {
+        public int[] daysPerMonth = { 0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
         private int month;
         private int day;
         private int year;
@@ -46,17 +47,19 @@ namespace ConsoleApp._10._6
 
             private set
             {
-                int[] daysPerMonth = { 0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-
+                
+                
                 if(value <= 0 || value > daysPerMonth[Month])
                 {
-                    throw new ArgumentOutOfRangeException(nameof(value), value, $"{nameof(Day)} out of range current month/year");
+                    throw new ArgumentOutOfRangeException(nameof(value), value, $"{nameof(Day)} out of range current month/year");   
                 }
 
                 if(Month == 2 && value == 29 && !(Year % 400 == 0 || (Year % 4 == 0 && Year % 100 != 0)))
                 {
                     throw new ArgumentOutOfRangeException(nameof(value), value, $"{nameof(Day)} out of range current month/year");
                 }
+
+                
                 day = value;
             }
         }
@@ -78,9 +81,18 @@ namespace ConsoleApp._10._6
             }
         }
 
-        public void NextDay()
+        public void NextDay(int d)
         {
-            Day = Day + 1;
+
+            if(d == daysPerMonth[Month])
+            {
+                Day = 1;
+                Month++;
+            }
+            else
+            {
+                Day = Day + 1;
+            }   
         }
 
         public override string ToString() => $"{Month}/{Day}/{Year}";
