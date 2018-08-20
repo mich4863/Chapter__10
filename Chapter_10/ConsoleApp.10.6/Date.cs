@@ -83,7 +83,6 @@ namespace ConsoleApp._10._6
 
         public void NextDay(int d)
         {
-
             if(d == daysPerMonth[Month])
             {
                 Day = 1;
@@ -93,6 +92,25 @@ namespace ConsoleApp._10._6
             {
                 Day = Day + 1;
             }   
+        }
+
+        public void NextDay2(int d, int m)
+        {
+            if(d == daysPerMonth[Month])
+            {
+                Day = 1;
+                Month++;
+            }
+            else
+            {
+                Day = Day + 1;
+            }
+
+            if(m == 12 && d == daysPerMonth[Month])
+            {
+                Month = 1;
+                Year++;
+            }
         }
 
         public override string ToString() => $"{Month}/{Day}/{Year}";

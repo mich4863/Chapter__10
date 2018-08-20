@@ -10,10 +10,10 @@ namespace ConsoleApp._10._6
     {
         static void Main(string[] args)
         {
-            Date date = new Date(05, 20, 2001);
+            //Date date = new Date(05, 20, 2001);
 
             // ------------ A --------------
-            int count = 31;
+            /*int count = 31;
 
             for(int i = 0; i < count;)
             {
@@ -21,19 +21,21 @@ namespace ConsoleApp._10._6
                 Console.WriteLine(date);
                 i++;  
             }
-            Console.ReadLine();
+            Console.ReadLine();*/
 
-            // ------------ A --------------
+            // ------------ B --------------
 
-            Date date2 = new Date(02, 12, 2017);
+            Date date2 = new Date(07, 07, 2017);
 
             int count2 = 365;
 
-            for(int i2 = 0; i2 < count;)
+            for(int i2 = 0; i2 < count2;)
             {
-                
+                date2.NextDay2(date2.Day, date2.Month);
+                Console.WriteLine(date2);
+                i2++;
             }
-
+            Console.ReadLine();
         }
     }
 }
