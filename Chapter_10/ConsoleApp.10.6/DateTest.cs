@@ -25,7 +25,7 @@ namespace ConsoleApp._10._6
 
             // ------------ B --------------
 
-            Date date2 = new Date(07, 07, 2017);
+            Date date2 = new Date(07, 07, 1999);
 
             int count2 = 365;
 

@@ -8,7 +8,7 @@ namespace ConsoleApp._10._6
 {
     public class Date
     {
-        public int[] daysPerMonth = { 0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+        public static int[] daysPerMonth = { 0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
         private int month;
         private int day;
         private int year;
@@ -59,7 +59,6 @@ namespace ConsoleApp._10._6
                     throw new ArgumentOutOfRangeException(nameof(value), value, $"{nameof(Day)} out of range current month/year");
                 }
 
-                
                 day = value;
             }
         }
@@ -81,7 +80,7 @@ namespace ConsoleApp._10._6
             }
         }
 
-        public void NextDay(int d)
+        /*public void NextDay(int d)
         {
             if(d == daysPerMonth[Month])
             {
@@ -92,10 +91,18 @@ namespace ConsoleApp._10._6
             {
                 Day = Day + 1;
             }   
-        }
+        }*/
 
         public void NextDay2(int d, int m)
         {
+            if(m == 12 && d == daysPerMonth[Month])
+            {
+                Year++;
+                Month = 1;
+                Day = 1;
+                return;
+            }
+
             if(d == daysPerMonth[Month])
             {
                 Day = 1;
@@ -103,13 +110,7 @@ namespace ConsoleApp._10._6
             }
             else
             {
-                Day = Day + 1;
-            }
-
-            if(m == 12 && d == daysPerMonth[Month])
-            {
-                Month = 1;
-                Year++;
+                Day++;
             }
         }
 
