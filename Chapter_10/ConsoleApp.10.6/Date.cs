@@ -8,7 +8,7 @@ namespace ConsoleApp._10._6
 {
     public class Date
     {
-        public static int[] daysPerMonth = { 0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+        protected static int[] daysPerMonth = { 0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
         private int month;
         private int day;
         private int year;
